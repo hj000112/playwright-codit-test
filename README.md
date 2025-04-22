@@ -5,15 +5,6 @@
 
 ---
 
-## 🧪 주요 테스트 항목
-
-- 주요 뉴스 영역이 정상적으로 노출되는지 확인
-- 통합 관련 주요 뉴스 텍스트 존재 여부 확인
-- 뉴스 이미지가 화면에 정상적으로 표시되는지 확인
-- 디지털데일리 텍스트가 1개 이상 있는지 확인
-
----
-
 ## ⚙️ 기술 스택
 
 - [Playwright](https://playwright.dev/)
@@ -31,8 +22,8 @@
 npx playwright install
 
 # 일반 테스트 실행
-npx playwright test
-
+npx test
 
 # 디버깅 모드 실행 (테스트 과정을 눈으로 보며 단계별 확인 가능)
 npx playwright test --debug
+
