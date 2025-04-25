@@ -2,8 +2,10 @@ name: Daily Playwright Test
 
 on:
   schedule:
-    - cron: '0 16 * * *' # 한국시간 기준 매일 오전 1시
-  workflow_dispatch: 
+    - cron: '0 16 * * *' # 매일 KST 오전 1시
+  push:
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   test:
