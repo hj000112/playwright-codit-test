@@ -3,6 +3,7 @@ import { test, expect, chromium, Page } from '@playwright/test';
 let page: Page;
 const isCI = process.env.CI === 'true';
 
+
 test.beforeAll(async () => {
   const browser = await chromium.launch({
     headless: isCI,              // CI 환경이면 true, 로컬이면 false
@@ -31,7 +32,12 @@ test('메인 페이지의 중요 텍스트가 보이는지 확인', async () => 
 
 });
 
+
 test('주요 동향 섹션의 첫 번째 뉴스 카드를 클릭하면 외부 기사로 이동', async () => {
+  if (isCI) {
+    test.skip(true, 'CI 환경에서는 외부 기사 테스트를 건너뜁니다.');
+  }
+
   const section = page
   .getByRole('heading', { name: /주요 동향/ })
   .locator('..')
